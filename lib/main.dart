@@ -37,6 +37,7 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.alef().fontFamily,
       ),
+      initialRoute: MyRoutes.homeRoutes,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoutes: (context) => HomePage(),
