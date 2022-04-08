@@ -1,20 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
+    String? txt;
+    void click() {
+      setState(() {
+        txt = "Log OUT";
+      });
+    }
+
     return Material(
-        color: Colors.white,
+        // color: Colors.white,
+        child: SafeArea(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Image.asset(
               "assets/images/login.png",
               fit: BoxFit.cover,
+              width: MediaQuery.of(context).size.width / 2,
             ),
             const SizedBox(
               height: 10,
@@ -22,9 +38,9 @@ class LoginPage extends StatelessWidget {
             const Text(
               "Welcome",
               style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             Padding(
               padding:
@@ -46,12 +62,20 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
             ElevatedButton(
-                onPressed: () => {print("Dilber Husain Login")},
-                child: Text("Login"))
+              child: Text("Login"),
+              onPressed: () =>
+                  {Navigator.pushNamed(context, MyRoutes.homeRoutes)},
+              style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+            ),
+            SizedBox(
+              height: 20,
+            )
           ],
-        ));
+        ),
+      ),
+    ));
   }
 }
