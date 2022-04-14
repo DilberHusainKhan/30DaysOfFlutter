@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login Page")),
+      appBar: AppBar(title:const Text("Login Page")),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
@@ -131,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                 //   },
                 //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                 // ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 )
               ],

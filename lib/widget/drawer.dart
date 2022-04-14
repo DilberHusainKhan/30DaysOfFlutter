@@ -6,35 +6,34 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _imgURL =
+    const _imgURL =
         "https://avatars.githubusercontent.com/u/53649013?s=400&u=a574d520c96ea7bd572a24e50f9fdd394992dfe1&v=4";
     return Drawer(
       child: ListView(
         // ignore: prefer_const_literals_to_create_immutables
         padding: EdgeInsets.zero,
-        children: [
-          // ignore: prefer_const_constructors
+        children: const[
           DrawerHeader(
-              decoration: BoxDecoration(color: Colors.deepPurple),
+              decoration:  BoxDecoration(color: Colors.deepPurple),
               padding: EdgeInsets.zero,
               // ignore: prefer_const_constructors
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: const Text("Dilber Husain Khan"),
-                accountEmail: const Text("dilbergniot@gmail.com"),
+                accountName:  Text("Dilber Husain Khan"),
+                accountEmail: Text("dilbergniot@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(_imgURL),
                 ),
               )),
-          const ListTile(
+           ListTile(
             leading: Icon(CupertinoIcons.home),
             title: Text("Home"),
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(CupertinoIcons.profile_circled),
             title: Text("Profile"),
           ),
-          const ListTile(
+          ListTile(
             leading: Icon(CupertinoIcons.mail),
             title: Text("Email"),
           ),
